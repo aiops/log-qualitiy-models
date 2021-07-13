@@ -1,0 +1,17 @@
+.vscode/
+*.pyc
+__pycache__/
+.pytest_cache/
+.idea/
+venv/
+venv
+
+/training_scripts/*/*.csv
+/training_scripts/*/*.pkl
+/training_scripts/*/*.joblib
+/training_scripts/*/*.pickle
+
+./*.csv
+./*.pkl
+./*.joblib
+./*.pickle
