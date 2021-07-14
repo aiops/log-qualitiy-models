@@ -55,7 +55,7 @@ features, targets = data.values[:, 0], data.values[:, 1]
 
 # This should not be changes. Later, copy the model to the respective directory 
 # if you want to publish it. Check the readme first.
-model_file_path = "./qulog_svc"
+model_file_path = "./model"
 
 label2id = {"info": 0, "error":1}
 id2label = {0:"info", 1:"error"}

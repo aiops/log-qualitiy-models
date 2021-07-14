@@ -8,7 +8,7 @@ venv
 build/
 *egg-info/
 
- model
+model
 
 *.csv
 *.pkl
