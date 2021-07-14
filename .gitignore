@@ -8,6 +8,8 @@ venv
 build/
 *egg-info/
 
+ model
+
 *.csv
 *.pkl
 *.joblib
