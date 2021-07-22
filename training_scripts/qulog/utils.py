@@ -3,6 +3,8 @@ import pickle
 import numpy as np
 from joblib import dump
 
+from sklearn.metrics import f1_score
+
 
 #################################################
 ##### Storage
@@ -70,7 +72,7 @@ def evaluate(model, token_embeddings, target_ids, iterations=10, split=0.7):
 
         test_x, test_y = token_embeddings[test_indecies], target_ids[test_indecies]
         pred_y = model.predict(test_x)
-        f1_scores.append(f1_scores(pred_y, test_y))
+        f1_scores.append(f1_score(pred_y, test_y))
 
         print("The F1 score is {}".format(f1_scores[i]))
         print("-------" * 10)

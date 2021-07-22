@@ -14,7 +14,6 @@ from utils import *
 #################################################
 
 
-# another method is required if other nlp models are used
 def get_trf_embeddings(trf_docs):
     embeddings = []
     for doc in trf_docs:

@@ -13,14 +13,6 @@ from utils import *
 ##### Preprocessing
 #################################################
 
-
-# another method is required if other nlp models are used
-def get_trf_embeddings(trf_docs):
-    embeddings = []
-    for doc in trf_docs:
-        embeddings.append(doc._.trf_data.tensors[-1].ravel())
-    return embeddings
-
 def get_small_web_embeddings(vec):
     embeddings = []
     for doc in vec:
@@ -67,7 +59,6 @@ label2id = {"info": 0, "error":1}
 id2label = {0:"info", 1:"error"}
 
 model = make_pipeline(StandardScaler(), SVC(gamma="auto", kernel="rbf", verbose=True))
-# nlp = spacy.load('en_core_web_trf')
 nlp = spacy.load("en_core_web_sm")
 
 token_embeddings, target_ids = preprocessing(features, targets, nlp, label2id)
