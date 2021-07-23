@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./bash_lib/prepare/prepare.sh -t "level" "$@"

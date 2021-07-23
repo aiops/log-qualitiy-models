@@ -17,3 +17,5 @@ model
 
 **/dist/*
 !**/dist/*.whl
+
+.tmp

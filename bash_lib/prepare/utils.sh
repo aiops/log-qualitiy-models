@@ -1,5 +1,18 @@
 #!/bin/bash
 
+function help {
+   # Display Help
+   echo "Preparing directories and files for a new model that should be published."
+   echo
+   echo "Syntax: prepare$1 [-h | <name>]"
+   echo "options:"
+   echo "h     Print this Help."
+   echo
+   echo "Use a reasonable name. Convention: <arbitrary name>_<embedding name>_<model type>."
+   echo "E.g. qulog_em_svc"
+   echo
+}
+
 function warning {
     echo "model-publish-prepare: $*" >&2
 }
@@ -22,19 +35,9 @@ function initialise_variables {
 
     export analysis_type=""
     export model_name=""
-}
 
-function help {
-   # Display Help
-   echo "Preparing directories and files for a new model that should be published."
-   echo
-   echo "Syntax: prepare$1 [-h | <name>]"
-   echo "options:"
-   echo "h     Print this Help."
-   echo
-   echo "Use a reasonable name. Convention: <arbitrary name>_<embedding name>_<model type>."
-   echo "E.g. qulog_em_svc"
-   echo
+    export template_class_file="$source_directory/templates/template_class.py.tmpl"
+    export template_setup_file="$source_directory/templates/setup.py.tmpl"
 }
 
 function process_command_arguments {
@@ -42,11 +45,12 @@ function process_command_arguments {
     while getopts "t:h" opt; do
         case $opt in
             h)
-                help "-$analysis_type"
+                help "_$analysis_type"
                 exit 0
             ;;
             t)
                 warning "-t Quality analysis type: $OPTARG"
+                tflag=true
                 if [ $OPTARG != "level" ] && [ $OPTARG != "ling" ]; then
                     warning "error: Quality analysis type must be either 'level' or 'ling'." 
                     exit 11
@@ -64,6 +68,11 @@ function process_command_arguments {
             ;;
         esac
     done
+
+    if ! [ "$tflag" = true ]; then
+        warning "error: argument -t is required"
+        exit 14
+    fi
 
     shift $((OPTIND-1))
 

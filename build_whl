@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./bash_lib/build_whl/build_whl.sh "$@"
