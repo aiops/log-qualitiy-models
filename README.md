@@ -26,7 +26,7 @@ Used in
 install_requires=[
     "scikit-learn==0.24.2",
     "spacy==3.1.0",
-],
+]
 ```
 It's a python list. Don't forget the commas.
 
