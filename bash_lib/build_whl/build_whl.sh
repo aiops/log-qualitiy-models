@@ -107,9 +107,8 @@ if [[ retval -ne 0 ]]; then
     warning "error: failed to build whl file"
     exit $retval
 fi
-cd "$source_directory_abs"
 
-rm "$source_directory.tmp"
+rm "$source_directory_abs/.tmp"
 
 warning "####### Whl build successful. #######"
 warning "Next steps:"
