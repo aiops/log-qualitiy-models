@@ -1,3 +1,5 @@
 #!/bin/bash
 
-./bash_lib/build_whl/build_whl.sh "$@"
+home=`dirname $(readlink -e $0)`
+
+"$home/bash_lib/build_whl/build_whl.sh" "$@"

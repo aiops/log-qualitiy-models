@@ -1,3 +1,5 @@
 #!/bin/bash
 
-./bash_lib/prepare/prepare.sh -t "ling" "$@"
+home=`dirname $(readlink -e $0)`
+
+"$home/bash_lib/prepare/prepare.sh" -t "ling" "$@"
