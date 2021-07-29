@@ -76,7 +76,6 @@ class QulogSmRf:
             ll = self._preprocess_log(ll)
             if ll:
                 result.append(" ".join(ll))
-        print(result)
         return result
 
     def _get_word_class_embeddings(self, log_lines):
