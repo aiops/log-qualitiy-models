@@ -59,12 +59,12 @@ features, targets = data.values[:, 1], data.values[:, 5]
 
 # This should not be changes. Later, copy the model to the respective directory 
 # if you want to publish it. Check the readme first.
-model_file_path = "../../../level_quality/qulog_sm_rf/qulog_sm_rf/model"
+model_file_path = "../../../level_quality/level_qulog_sm_rf/level_qulog_sm_rf/model"
 
 # label2id = {"info": 0, "error":1}
 id2label = {0:"info", 1:"error"}
 
-model = make_pipeline(StandardScaler(), RandomForestClassifier(n_estimators=100, min_samples_split=2))
+model = make_pipeline(StandardScaler(), RandomForestClassifier())
 nlp = spacy.load("en_core_web_sm")
 
 token_embeddings, target_ids = preprocessing(features, targets, nlp, label2id)
