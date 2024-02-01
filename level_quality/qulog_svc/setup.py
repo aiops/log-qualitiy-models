@@ -13,7 +13,7 @@ setup(
         'qulog_svc': ['model'],
     },
     install_requires=[
-        "scikit-learn==0.24.2",
+        "scikit-learn==1.0.1",
         "spacy==3.1.0",
         "en-core-web-trf @ https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.1.0/en_core_web_trf-3.1.0-py3-none-any.whl",
     ],
